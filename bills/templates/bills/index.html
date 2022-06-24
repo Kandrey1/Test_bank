@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Счета клиентов</title>
+    <link type="text/css" href="{% static 'bills/css/style.css' %}" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="wrapper">
+        <header class="header">
+            {% for q in qq %}
+                <li>{{ q }}</li>
+            {% endfor %}
+        </header>
+        <main class="main__container">
+            <h2>Клиенты</h2>
+                {% for client in db_clients %}
+                    <li>{{ client }}</li>
+                {% endfor %}
+            <br>
+            <h2>Организации</h2>
+                {% for organization in db_organizations %}
+                    <li>{{ organization }}</li>
+                {% endfor %}
+            <br>
+            <h2>Счета</h2>
+                {% for bills in db_bills %}
+                    <li>{{ bills }}</li>
+                {% endfor %}
+        </main>
+    </div>
+</body>
+</html>
